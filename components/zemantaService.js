@@ -252,16 +252,10 @@ zemantaService.prototype = {
     }
     catch (e)
     {
-        this.startUninstallObserverLegacyEM();
+        var e = new Error("Could not uninstall observer.");
+        Zemanta.Util.logError(e, 0, e.fileName, e.lineNumber);
+      
     }
-  },
-
-  startUninstallObserverLegacyEM : function ()
-  {
-      var observerService = Cc["@mozilla.org/observer-service;1"].
-                                getService(Ci.nsIObserverService);
-      observerService.addObserver(this.addonsAction, "em-action-requested", false);
-      observerService.addObserver(this.addonsAction, "quit-application-granted", false);
   },
 
   addonsAction :

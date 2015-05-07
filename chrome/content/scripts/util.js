@@ -37,27 +37,14 @@ Zemanta.Util.getExtensionVersion = function(aCallback)
 {
     var bits = {major: 1, minor: 0, revision: 0, increment: 0};
 
-    try
-    {
-        Components.utils.import("resource://gre/modules/AddonManager.jsm");
+    Components.utils.import("resource://gre/modules/AddonManager.jsm");
 
-        AddonManager.getAddonByID(Zemanta.EMID, function(addon)
-        {
-            if (addon)
-            {
-                Zemanta.versionCallback(addon.version);
-            }
-        });
-    }
-    catch (e)
-    {
-        Zemanta.Logger.error("Defaulting to old way of getting version : "+e);
-        // Legacy EM stuff
-        var em = Components.classes["@mozilla.org/extensions/manager;1"]
-            .getService(Components.interfaces.nsIExtensionManager);
-        var addon = em.getItemForID(Zemanta.EMID);
-        Zemanta.versionCallback(addon.version);
-    }
+    AddonManager.getAddonByID(Zemanta.EMID, function(addon) {
+        if (addon) {
+            Zemanta.versionCallback(addon.version);
+        }
+    });
+    Zemanta.versionCallback(addon.version);
 }
 
 Zemanta.Util.getGlobalPref = function(aPrefName, aIsComplex)

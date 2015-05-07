@@ -227,8 +227,9 @@ Zemanta.clearImageCache = function()
                 }
                 else
                 {
-                    var imgCacheService = Components.classes["@mozilla.org/image/cache;1"].getService();
-                    var imgCache = imgCacheService.QueryInterface(Components.interfaces.imgICache);
+                    var imgCacheService = Components.classes["@mozilla.org/image/tools;1"].getService(Components.interfaces.imgITools);
+                    var imgCache = tools.getImgCacheForDocument(relevantDocument);
+					
                     var IOService = Components.classes["@mozilla.org/network/io-service;1"]
                                  .getService(Components.interfaces.nsIIOService);
                     Zemanta.Logger.debug("Get Images File complete");
