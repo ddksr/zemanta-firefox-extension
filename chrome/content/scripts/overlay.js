@@ -281,7 +281,7 @@ var ZemantaPrefsWatcher = {
     const prefService = Components.classes["@mozilla.org/preferences-service;1"]
                             .getService(Ci.nsIPrefService);
     this.prefs = prefService.getBranch("extensions.zemanta.");
-    this.prefs.QueryInterface(Ci.nsIPrefBranch2);
+    this.prefs.QueryInterface(Ci.nsIPrefBranch);
     this.prefs.addObserver("", this, false);
   },
   shutdown: function()
