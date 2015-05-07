@@ -17,7 +17,7 @@ Zemanta.Parser = function()
     this.href = null;
     this.loaderurl = null;
     this.loaderbase = "http://fstatic.zemanta.com";
-    this.loaderbasesecure = "https://s3.amazonaws.com/static.zemanta.com";
+    this.loaderbasesecure = "https://static.zemanta.com";
     //this.releaseid = 0;  // release_id will be read from rules.xml, seconds since 1970
 
     /* Download the scripts, before injection
