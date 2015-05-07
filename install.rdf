@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<!-- Extension install manifest 
+   Copyright (C) Zemanta. See license.txt bundled for full license.
+ -->
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+    <Description about="urn:mozilla:install-manifest">
+
+        <em:id>firefox@zemanta.com</em:id>
+        <em:name>Zemanta</em:name>
+        <em:type>2</em:type>
+        <em:version>1.1</em:version>
+        <em:description>Contextually relevant suggestions of links, pictures, related content and tags will make your blogging fun again.</em:description>
+        <em:creator>Zemanta Ltd.</em:creator>
+        <em:contributor>BRIKS Software (http://briks.si)</em:contributor>
+        <em:developer>Brian King</em:developer>
+        <em:homepageURL>http://www.zemanta.com</em:homepageURL>
+        <em:iconURL>chrome://zemanta/skin/icons/48.png</em:iconURL>
+        <em:icon64URL>chrome://zemanta/skin/icons/64.png</em:icon64URL>
+        <em:optionsURL>chrome://zemanta/content/settings.xul</em:optionsURL>
+
+        <!-- Firefox -->
+        <em:targetApplication>
+            <Description>
+                <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+                <em:minVersion>4.0</em:minVersion>
+                <em:maxVersion>35.0</em:maxVersion>
+            </Description>
+        </em:targetApplication>
+
+        <!-- Seamonkey -->
+        <em:targetApplication>
+          <Description>
+            <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+            <em:minVersion>2.6</em:minVersion>
+            <em:maxVersion>2.9a1</em:maxVersion>
+          </Description>
+        </em:targetApplication>
+
+    </Description>
+
+</RDF>

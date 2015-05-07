@@ -1,0 +1,18 @@
+<!--
+  Static strings used by Zemanta Extension 
+  Copyright (C) Zemanta. See license.txt bundled for full license.
+-->
+
+<!ENTITY zemanta.label                       "Zemanta">
+<!ENTITY sidebar.label                       "Content Recommendations">
+
+<!ENTITY enable.label                        "Enable Zemanta">
+<!ENTITY support.label                       "Visit Support Forums">
+<!ENTITY faq.label                           "FAQ">
+<!ENTITY about.label                         "About">
+
+<!-- Settings window -->
+<!ENTITY settings.title                      "Zemanta Settings">
+<!-- Note to translators ... make this value bigger if your strings are cut off at the 
+      sides in the settings screen. This will widen the screen. -->
+<!ENTITY settings.window.size                "width: 38em;">

@@ -1,0 +1,50 @@
+/*
+ * Zemanta Extension styles
+ *
+ * Copyright (C) Zemanta. See license.txt bundled for full license.
+ */
+
+/* Location Bar button */
+
+#zemanta-urlbar-icon {
+  -moz-appearance: none;
+  border: none;
+  padding: 0px;
+}
+
+#zemanta-urlbar-icon:hover {
+  border: none;
+}
+
+#zemanta-urlbar-icon .toolbarbutton-menu-dropmarker {
+  display: none
+}
+
+/* Normal */
+#zemanta-tools-menu,
+#zemanta-urlbar-icon,
+#zemanta-urlbar-icon[active="false"] {
+  list-style-image: url("chrome://zemanta/skin/images/zemicon_normal.png")
+}
+
+/* Hover */
+#zemanta-compose-button,
+#zemanta-tools-menu:hover,
+#zemanta-urlbar-icon:hover,
+#zemanta-urlbar-icon[active="true"],
+#zemanta-urlbar-icon[active="true"]:hover {
+  list-style-image: url("chrome://zemanta/skin/images/zemicon_active.png")
+}
+
+/* Disabled */
+#zemanta-urlbar-icon[activated="false"],
+#zemanta-urlbar-icon[activated="false"]:hover {
+  list-style-image: url("chrome://zemanta/skin/images/zemicon_disabled.png")
+}
+
+/* Thunderbird menuitems inherit the icons of the menu!! Lets break that */
+#zemanta-menu-support,
+#zemanta-menu-issues,
+#zemanta-menu-about {
+  list-style-image: none;
+}

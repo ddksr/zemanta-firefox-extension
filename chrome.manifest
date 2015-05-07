@@ -1,0 +1,19 @@
+# Copyright (C) Zemanta. See license.txt bundled for full license.
+content  zemanta       chrome/content/
+content  zemanta       chrome/content/	contentaccessible=yes
+locale   zemanta       en-US   chrome/locale/en-US/
+skin     zemanta       classic/1.0   chrome/skin/classic/
+
+# Firefox overlays
+overlay  chrome://browser/content/browser.xul    chrome://zemanta/content/overlay/zemantaOverlay.xul
+overlay  chrome://browser/content/browser.xul    chrome://zemanta/content/overlay/urlbarOverlay.xul
+
+# Seamonkey overlays
+overlay  chrome://navigator/content/navigator.xul    chrome://zemanta/content/overlay/zemantaOverlay.xul
+overlay  chrome://navigator/content/navigator.xul    chrome://zemanta/content/overlay/urlbarOverlay.xul
+
+# The {classID} here must match the classID in zemantaService.js
+component {55c94759-1c44-4391-aadd-09eeabe9eb20} components/zemantaService.js
+contract @zemanta.com/zemanta-service;1 {55c94759-1c44-4391-aadd-09eeabe9eb20}
+category profile-after-change zemantaService @zemanta.com/zemanta-service;1
+interfaces components/zemIZemantaService.xpt

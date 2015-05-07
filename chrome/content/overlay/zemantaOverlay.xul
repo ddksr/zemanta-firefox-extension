@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<!-- Extension overlay content hooks into Firefox 
+     Copyright (C) Zemanta. See license.txt bundled for full license.
+-->
+
+<!DOCTYPE overlay SYSTEM "chrome://zemanta/locale/zemanta.dtd" >
+
+<?xml-stylesheet href="chrome://zemanta/skin/zemanta.css" type="text/css"?>
+
+<overlay id="zemantaOverlay"
+      xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/zemanta.js" />
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/util.js" />
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/logger.js" />
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/overlay.js" />
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/rules.js" />
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/scripts.js" />
+
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/rpc/service.js" />
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/rpc/net.js" />
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/rpc/constants.js" />
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/rpc/error.js" />
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/rpc/event.js" />
+
+    <script type="application/x-javascript" src="chrome://zemanta/content/scripts/parsers/base.js" />
+
+    <commandset id="mainCommandSet">
+        <command id="Zemanta:Enable"         oncommand="Zemanta.Overlay.toggleEnabled();"/>
+        <command id="Zemanta:Support"        oncommand="Zemanta.Overlay.doSupport();"/>
+        <command id="Zemanta:FAQ"            oncommand="Zemanta.Overlay.doFAQ();"/>
+        <command id="Zemanta:About"          oncommand="Zemanta.Overlay.doAbout();"/>
+    </commandset>
+
+    <!-- Tools Menu -->
+    <menupopup id="menu_ToolsPopup">
+        <menu id="zemanta-tools-menu"
+              class="menu-iconic"
+              label="&zemanta.label;"
+              insertafter="devToolsSeparator">
+            <menupopup onpopupshowing="Zemanta.Overlay.setPopupItems();">
+                <menuitem id="zemanta-menu-enable"
+                          type="checkbox"
+                          label="&enable.label;"
+                          command="Zemanta:Enable"/>
+                <menuitem id="zemanta-menu-support"
+                          label="&support.label;"
+                          command="Zemanta:Support"/>
+                <menuitem id="zemanta-menu-faq"
+                          label="&faq.label;"
+                          command="Zemanta:FAQ"/>
+                <menuitem id="zemanta-menu-about"
+                          label="&about.label;"
+                          command="Zemanta:About"/>
+            </menupopup>
+        </menu>
+    </menupopup>
+  
+</overlay>

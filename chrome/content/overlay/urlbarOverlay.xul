@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!-- Location bar hooks into Firefox 
+     Copyright (C) Zemanta. See license.txt bundled for full license.
+-->
+
+<!DOCTYPE overlay SYSTEM "chrome://zemanta/locale/zemanta.dtd" >
+
+<?xml-stylesheet href="chrome://zemanta/skin/zemanta.css" type="text/css"?>
+
+<overlay id="urlbarOverlay"
+      xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+    <!-- Location bar -->
+    <hbox id="urlbar-icons">
+        <toolbarbutton insertbefore="star-button"
+                type="menu"
+                id="zemanta-urlbar-icon"
+                on="true"
+                tooltiptext="&zemanta.label;">
+            <menupopup onpopupshowing="ZemantaLocationBarButton.setPopupItems();"
+                       position="after_end">
+                <menuitem id="zemanta-urlbar-enable"
+                          type="checkbox"
+                          autocheck="false"
+                          checked="true"
+                          label="&enable.label;"
+                          command="Zemanta:Enable"/>
+                <menuitem id="zemanta-urlbar-support"
+                          label="&support.label;"
+                          command="Zemanta:Support"/>
+            </menupopup>
+        </toolbarbutton>
+    </hbox>
+  
+</overlay>

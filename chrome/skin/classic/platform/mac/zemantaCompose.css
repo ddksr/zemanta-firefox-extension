@@ -1,0 +1,16 @@
+/*
+ * Compose Window Zemanta CSS, Mac style
+ *
+ * Copyright (C) Zemanta. See license.txt bundled for full license.
+ */
+
+#zemanta-compose-button {
+  list-style-image: url("chrome://zemanta/skin/icons/32.png") !important;
+  background: url("chrome://messenger/skin/messengercompose/small-button-base.png") no-repeat;
+  width: 32px;
+  margin: 0;
+}
+
+#zemanta-compose-button:hover:active, #zemanta-compose-button[checked="true"] {
+  background: url("chrome://messenger/skin/messengercompose/small-button-pressed.png") no-repeat;
+}
