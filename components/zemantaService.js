@@ -258,43 +258,6 @@ zemantaService.prototype = {
     }
   },
 
-  addonsAction :
-  {
-      _uninstall : false,
-      observe : function (subject, topic, data)
-      {
-        if (topic == "em-action-requested") {
-            subject.QueryInterface(Ci.nsIUpdateItem);
-            if (subject.id == gEmGUID) {
-                if (data == "item-uninstalled") {
-                    // This fires more than once, so add a check
-                    if (this._uninstall == false)
-                    {
-                        this._uninstall = true;
-                        uninstallMaybe();
-                    }
-                }
-                else if (data == "item-cancel-action")
-                    this._uninstall = false;
-            }
-        }
-        else if (topic == "quit-application-granted") {
-            if (this._uninstall) {
-                uninstallShutdown();
-            }
-            this.unregister();
-        }
-      },
-
-      unregister : function()
-      {
-        var observerService = Components.classes["@mozilla.org/observer-service;1"].
-                                getService(Components.interfaces.nsIObserverService);
-        observerService.removeObserver(this, "em-action-requested");
-        observerService.removeObserver(this, "quit-application-granted");
-      }
-  },
-
   domContentLoaded : function(wrappedContentWin, chromeWin)
   {
     this.unsafeWin = wrappedContentWin.wrappedJSObject;
